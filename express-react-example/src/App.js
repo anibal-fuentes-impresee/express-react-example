@@ -11,14 +11,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <h1> {process.env.REACT_APP_BASE_URL} </h1>
-        <h2> {process.env.NODE_ENV} </h2>
         <a href={`${urls.BASE_URL}/home`} style={{margin: "5px"}}>Home</a>
         <a href={`${urls.BASE_URL}/about`} style={{margin: "5px"}}>About</a>
         <Switch>
-          <Route exact path={`${urls.BASE_URL}/`} component={Home} />
-          <Route exact path={`${urls.BASE_URL}/home`} component={Home} />
-          <Route exact path={`${urls.BASE_URL}/about`} component={About} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route path="/" component={Home} />
         </Switch>
       </Router>
     );
