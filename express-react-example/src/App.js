@@ -16,9 +16,9 @@ class App extends Component {
         <a href={`${urls.BASE_URL}/home`} style={{margin: "5px"}}>Home</a>
         <a href={`${urls.BASE_URL}/about`} style={{margin: "5px"}}>About</a>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/about" component={About} />
+          <Route exact path={`${urls.BASE_URL}/`} component={Home} />
+          <Route exact path={`${urls.BASE_URL}/home`} component={Home} />
+          <Route exact path={`${urls.BASE_URL}/about`} component={About} />
         </Switch>
       </Router>
     );

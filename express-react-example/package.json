@@ -19,6 +19,7 @@
     "start": "REACT_APP_BASE_URL='' react-scripts start",
     "build": "react-scripts build",
     "build:bundle": "webpack --env.REACT_APP_BASE_URL='https://dev2.impresee.com/express-react' --config webpack.config.js --mode production",
+    "build:bundle-dev": "webpack --env.REACT_APP_BASE_URL='' --config webpack.config.js --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
