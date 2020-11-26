@@ -7,9 +7,7 @@ require("babel-polyfill");
 
 module.exports = (env, args) => { return {
   context: __dirname,
-
   entry: ["babel-polyfill", "./src/index"],
-
   output: {
     path: path.join(__dirname,'dist'),
     filename: "[name]-[hash].js"
@@ -25,6 +23,11 @@ module.exports = (env, args) => { return {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new webpack.DefinePlugin({
+      "process.env.REACT_APP_BASE_URL": JSON.stringify(
+        env.REACT_APP_BASE_URL || ""
+      )
+    })
   ],
   module: {
     rules: [
