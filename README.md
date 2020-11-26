@@ -23,25 +23,16 @@ El cual ejecutará el webpack, se debe tener en consideración que el webpack se
 
 Debo configurar el apache para redireccionar las llamadas que se hagan al puerto donde correrá el servidor express. Para esto en el respectivo .conf agrego:
 
-<Location /express-react/ >
-
+`<Location /express-react/ >
   ProxyPreserveHost On
-  
   ProxyPass  http://localhost:5010/
-  
   ProxyPassReverse http://localhost:5010/
-  
   ProxyPassReverseCookieDomain  "localhost"  "dev2.impresee.com"
-  
   ProxyPassReverseCookiePath  "/"  "/express-react/"
-  
   Header add Access-Control-Allow-Origin "*"
-  
   Header add Access-Control-Allow-Credentials true
-  
   Header add Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
-  
-</Location>
+</Location> `
 
 Donde /express-react/ es equivalente a {REACT_APP_BASE_ROUTE} y el puerto debe ser el puerto del servidor express.
 
