@@ -1,1 +1,2 @@
 export const BASE_URL = (process.env.NODE_ENV === "development") ? "" : (process.env.REACT_APP_BASE_URL || "");
+export const BASE_ROUTE = (process.env.NODE_ENV === "development") ? "" : (process.env.REACT_APP_BASE_ROUTE || "");
