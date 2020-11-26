@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
 var BundleTracker = require("webpack-bundle-tracker");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 require("babel-polyfill");
 
@@ -20,7 +21,10 @@ module.exports = (env, args) => { return {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new BundleTracker({ filename: "../webpack-stats.json" })
+    new BundleTracker({ filename: "../webpack-stats.json" }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
   ],
   module: {
     rules: [
