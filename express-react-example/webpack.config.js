@@ -52,10 +52,10 @@ module.exports = (env, args) => { return {
             options: {
               publicPath: (url, resourcePath, context) => {
                 if (args.mode === "development"){
-                  return `/static/home/bundles/${url}`;
+                  return url;
                 }
                 else {
-                  return `/shopify/static/home/bundles/${url}`;
+                  return url;
                 }
               }
             }
